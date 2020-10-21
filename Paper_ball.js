@@ -1,14 +1,14 @@
 class Ball{
-    constructor(x, y, width, height, angle) {
+    constructor(x, y,r) {
         var options = {
             'isStatic':false,
             'restitution':0.3,
             'friction':0.5,
             'density':1.2
         }
-        this.body = Bodies.rectangle(x, y,width, height, options);
-        this.width = width;
-        this.height = height;
+        this.body = Bodies.circle(x, y, r, options);
+        this.r = r;
+        this.image = loadImage("paper.png");
         World.add(world, this.body);
       }
       display(){
@@ -16,8 +16,9 @@ class Ball{
         push();
         translate(this.body.position.x, this.body.position.y);
         rotate(angle);
-        imageMode(CENTER);
-        image(this.image, 0, 0, this.width, this.height);
+        ellipseMode(RADIUS);
+        //ellipse( 0, 0,this.r*2,this.r*2);
+        image(this.image, 0, 0,this.r*2,this.r*2 );
         pop();
       }
 }
