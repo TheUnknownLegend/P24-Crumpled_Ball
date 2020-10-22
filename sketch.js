@@ -25,10 +25,10 @@ function setup() {
 	ground = new Ground(width/2, height-20, width,15);
 
 	dustbin1 = new dustbin(850,410, 15,120 ,PI/3,14);
-	dustbin2 = new dustbin(950,410, 15,120 ,PI/3.14);
-	dustbin3 = new dustbin(898,466, 15,100 ,PI/0.035);
+	dustbin2 = new dustbin(970,410, 15,120 ,PI/3.14);
+	dustbin3 = new dustbin(900,466, 15,120 ,PI/0.035);
 
-	paper_ball = new Ball(100,400,30);
+	paper_ball = new Ball(100,400,25);
 }
 
 
@@ -51,8 +51,8 @@ function draw() {
 }
 
 function keyPressed(){
-	if(keyCode === 32){
-		Matter.Body.applyForce(paper_ball.body,paper_ball.body.position,{x:500,y:300});
+	if(keyCode === UP_ARROW){
+		Matter.Body.applyForce(paper_ball.body,paper_ball.body.position,{x:125,y:-125});
 	}
 }
 
